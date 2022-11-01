@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "baseUrl": ".",
+    "paths": {
+      "@navigators": ["app/navigators/index"],
+      "@components": ["app/components/index"],
+      "@screens": ["app/screens/index"],
+      "@api": ["app/services/api/index"],
+      "@services": ["app/services/index"],
+      "@theme": ["app/theme/index"],
+      "@utils": ["app/utils/index"],
+      "@proxies": ["app/proxies/index"],
+      "@assets/*": ["assets/*"],
+      "@app/*": ["app/*"]
+    }
+  },
+  "exclude": ["node_modules", "ios", "android"]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "bladetemplate",
+  "private":"false",
+  "version": "0.0.2",
+  "description": "React Native Template with Valtio",
+  "repository": "https://github.com/haoccvn/Blade.git",
+  "author": "hao.dev7<hao.dev7@gmail.com>",
+  "license": "MIT"
+}

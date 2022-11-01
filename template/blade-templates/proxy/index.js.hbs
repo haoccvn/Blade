@@ -1,0 +1,54 @@
+{{#if usePersist}}
+import { storage } from '@app/utils'
+import proxyWithPersist, { PersistStrategy } from 'valtio-persist'
+import { derive, subscribeKey } from 'valtio/utils'
+
+export const {{camelCase name}} = proxyWithPersist({
+  // must be unique, files/paths will be created with this prefix
+  name: '@{{snakeCase name}}_persist',
+
+  initialState: {
+    token: 'this is token!',
+  },
+  persistStrategies: PersistStrategy.SingleFile,
+  version: 0,
+  migrations: {},
+
+  // see "Storage Engine" section below
+  getStorage: () => storage,
+})
+
+subscribeKey({{camelCase name}}._persist, 'loaded', loaded => {
+  if (loaded) {
+    console.log('@{{snakeCase name}}_persist safe loaded',)
+  }
+})
+
+export const {{camelCase name}}Derive = derive({
+  isLogin: get => get({{camelCase name}}).token !== null,
+})
+
+/* defined func in here */
+export const onChange = async () => {
+  /* your code */
+}
+{{else}}
+import { proxy, ref } from 'valtio'
+import { derive } from 'valtio/utils'
+
+export const {{camelCase name}} = proxy({
+  token: 'abc...xyz@123',
+  refObject: ref({
+    desc: 'The REACT will not re-render when this object changed!',
+  }),
+})
+
+export const {{camelCase name}}Derive = derive({
+  isLogin: get => get({{camelCase name}}).token !== null,
+})
+
+/* defined func in here */
+export const onChange = async () => {
+  /* your code */
+}
+{{/if}}

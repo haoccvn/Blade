@@ -1,0 +1,59 @@
+{
+  "name": "Blade",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "reset": "react-native start --reset-cache",
+    "ios:dev": "react-native run-ios --scheme 'BladeDev' --simulator='iPhone 13 mini'",
+    "ios:stg": "react-native run-ios --scheme 'BladeStg' --simulator='iPhone 13 mini'",
+    "ios:prod": "react-native run-ios --scheme 'Blade' --simulator='iPhone 13 mini'",
+    "android:dev": "react-native run-android --variant=developmentdebug",
+    "android:stg": "react-native run-android --variant=stagingdebug",
+    "android:prod": "react-native run-android --variant=productiondebug",
+    "android:dev-release": "react-native run-android --variant=developmentrelease",
+    "android:stg-release": "react-native run-android --variant=stagingrelease",
+    "android:prod-release": "react-native run-android --variant=productionrelease",
+    "test": "jest",
+    "lint": "eslint .",
+    "generate": "plop"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.17.9",
+    "@react-navigation/bottom-tabs": "^6.3.2",
+    "@react-navigation/native": "^6.0.11",
+    "@react-navigation/native-stack": "^6.7.0",
+    "@rneui/base": "^0.0.0-edge.2",
+    "@rneui/themed": "^0.0.0-edge.2",
+    "axios": "^0.27.2",
+    "axios-retry": "^3.3.1",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "lottie-ios": "3.4.0",
+    "lottie-react-native": "^5.1.4",
+    "plop": "^3.1.1",
+    "react": "18.1.0",
+    "react-native": "0.70.3",
+    "react-native-config": "^1.4.11",
+    "react-native-keychain": "^8.1.1",
+    "react-native-safe-area-context": "^4.3.1",
+    "react-native-screens": "^3.15.0",
+    "react-native-splash-screen": "^3.3.0",
+    "react-native-vector-icons": "^9.2.0",
+    "valtio": "^1.6.3",
+    "valtio-persist": "^1.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@types/react-native-vector-icons": "^6.4.11",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.32.0",
+    "jest": "^26.6.3",
+    "metro-react-native-babel-preset": "^0.72.3",
+    "react-test-renderer": "18.1.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
